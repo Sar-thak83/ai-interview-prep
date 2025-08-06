@@ -38,7 +38,7 @@ const QuestionCard = ({
 
           <h3
             className="text-xs md:text-[14px] font-medium text-gray-800 mr-0 md:mr-20"
-            onclick={toggleExpand}
+            onClick={toggleExpand}
           >
             {question}
           </h3>

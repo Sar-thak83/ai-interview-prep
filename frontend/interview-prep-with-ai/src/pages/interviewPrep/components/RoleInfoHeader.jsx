@@ -5,7 +5,7 @@ const RoleInfoHeader = ({
   experience,
   questions,
   description,
-  lastUpdate,
+  lastUpdated,
 }) => {
   return (
     <div className="bg-white relative">

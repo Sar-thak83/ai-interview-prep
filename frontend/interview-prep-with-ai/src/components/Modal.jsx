@@ -1,11 +1,19 @@
 import React from "react";
 const Modal = ({ children, isOpen, onClose, title, hideHeader }) => {
   if (!isOpen) return null;
+  const handleModalContentClick = (e) => {
+    // Prevent clicks inside the modal from closing it
+    e.stopPropagation();
+  };
   return (
-    <div className="fixed inset-0 z-50 flex justify-center items-center bg-black/40">
+    <div
+      className="fixed inset-0 z-50 flex justify-center items-center bg-black/40"
+      onClick={onClose}
+    >
       {/* Modal Content */}
       <div
         className={`relative flex flex-col bg-white shadow-lg rounded-lg overflow-hidden`}
+        onClick={handleModalContentClick}
       >
         {/* Modal Header */}
         {!hideHeader && (
@@ -15,8 +23,11 @@ const Modal = ({ children, isOpen, onClose, title, hideHeader }) => {
         )}
         <button
           type="button"
-          className="text-gray-400 bg-transparent hover:bg-orange-100 hover:text-gray-900 rounded-lg text-sm w-8 h-8 flex justify-center items-center absolute top-3.5 right-3.5 cursor-pointer"
-          onClick={onClose}
+          className="text-gray-400 bg-transparent hover:bg-orange-100 hover:text-gray-900 rounded-lg text-sm w-8 h-8 flex justify-center items-center absolute top-3.5 right-3.5 cursor-pointer z-[60]"
+          onClick={(e) => {
+            e.stopPropagation();
+            onClose();
+          }}
         >
           <svg
             className="w-3 h-3"

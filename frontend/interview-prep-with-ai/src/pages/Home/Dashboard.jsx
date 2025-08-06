@@ -9,6 +9,7 @@ import { API_PATHS } from "../../utils/api";
 import axiosInstance from "../../utils/axiosinstance";
 import SummaryCard from "../../components/Cards/SummaryCard";
 import CreateSessionForm from "./CreateSessionForm";
+import DeleteAlertContent from "../../components/DeleteAlertContent";
 import moment from "moment";
 
 const Dashboard = () => {

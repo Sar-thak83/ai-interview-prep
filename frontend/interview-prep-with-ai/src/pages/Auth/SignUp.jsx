@@ -42,7 +42,7 @@ const SignUp = ({ setCurrentPage }) => {
         const imgUploadRes = await uploadImage(profilePic);
         profileImageUrl = imgUploadRes.imageUrl || "";
       }
-      const response = await axiosInstance.post(API_PATHS.REGISTER, {
+      const response = await axiosInstance.post(API_PATHS.AUTH.REGISTER, {
         name: fullName,
         email,
         password,
