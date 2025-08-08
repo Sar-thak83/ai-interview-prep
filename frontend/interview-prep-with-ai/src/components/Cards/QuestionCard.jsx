@@ -51,7 +51,7 @@ const QuestionCard = ({
             }`}
           >
             <button
-              className="flex items-center gap-2 text-xs text-indigo-800 font-medium bg-indigo-50 px-3 py- 1 mr-2 rounded text-nowrap border border-indigo-50 hover:border-indigo-200 cursor-pointer"
+              className="flex items-center gap-2 text-xs text-indigo-800 font-medium bg-indigo-50 px-3 py-1 mr-2 rounded text-nowrap border border-indigo-50 hover:border-indigo-200 cursor-pointer"
               onClick={onTogglePin}
             >
               {isPinned ? (
@@ -78,7 +78,7 @@ const QuestionCard = ({
           >
             <LuChevronDown
               size={20}
-              className={`transform transition-transform duration-300${
+              className={`transform transition-transform duration-300 ${
                 isExpanded ? "rotate-180" : ""
               }`}
             />

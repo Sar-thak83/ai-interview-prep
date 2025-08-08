@@ -1,6 +1,7 @@
 import React, { use, useState } from "react";
 import Login from "./Auth/Login";
 import SignUp from "./Auth/SignUp";
+import image from "../assets/image.png";
 import { APP_FEATURES } from "../utils/data";
 import { useNavigate } from "react-router-dom";
 import { LuSparkles } from "react-icons/lu";
@@ -82,7 +83,7 @@ const LandingPage = () => {
       <div className="w-full min-h-full relative z-10 ">
         <div>
           <section className="flex items-center justify-center -mt-36">
-            <img src="image" alt="Hero Image" className="w-[80vw] rounded-lg" />
+            <img src={image} alt="Hero Image" className="w-[80vw] rounded-lg" />
           </section>
         </div>
 

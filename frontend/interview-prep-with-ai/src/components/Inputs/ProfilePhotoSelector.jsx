@@ -31,7 +31,7 @@ const ProfilePhotoSelector = ({ image, setImage, preview, setPreview }) => {
     <div className="flex justify-center mb-6">
       <input
         type="file"
-        accpet="image/*"
+        accept="image/*"
         ref={inputRef}
         onChange={handleImageChange}
         className="hidden"
