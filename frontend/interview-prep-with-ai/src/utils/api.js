@@ -1,4 +1,4 @@
-export const BASE_URL = "https://ai-interview-prep-production.up.railway.app";
+export const BASE_URL = "http://localhost:8000";
 
 export const API_PATHS = {
   AUTH: {
