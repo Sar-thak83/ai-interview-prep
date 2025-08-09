@@ -14,17 +14,16 @@ const {
 
 const app = express();
 
-// Allowed origins for CORS
+// Allowed origins
 const allowedOrigins = [
-  "https://ai-interview-prep-mauve.vercel.app", // production frontend
-  "http://localhost:5173", // local development
+  "https://ai-interview-prep-mauve.vercel.app",
+  "http://localhost:3000",
 ];
 
-// CORS setup
+// ✅ CORS middleware first
 app.use(
   cors({
     origin: (origin, callback) => {
-      // Allow requests with no origin (like mobile apps or curl)
       if (!origin || allowedOrigins.includes(origin)) {
         callback(null, true);
       } else {
@@ -33,11 +32,11 @@ app.use(
     },
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],
-    credentials: true, // allow cookies and authorization headers
+    credentials: true,
   })
 );
 
-// Handle preflight OPTIONS requests
+// ✅ Explicitly handle all OPTIONS requests before protect()
 app.options(
   "*",
   cors({
@@ -46,22 +45,39 @@ app.options(
   })
 );
 
-// Connect to DB
-connectDB();
-
 // Parse JSON
 app.use(express.json());
+
+// Connect DB
+connectDB();
 
 // Routes
 app.use("/api/auth", authRoutes);
 app.use("/api/sessions", sessionRoutes);
 app.use("/api/questions", questionRoutes);
-app.post("/api/ai/generate-questions", protect, generateInterviewQuestions);
-app.post("/api/ai/generate-explanation", protect, generateConceptExplanation);
 
-// Serve uploads
+// Only apply protect() for actual requests, not OPTIONS
+app.post(
+  "/api/ai/generate-questions",
+  (req, res, next) => {
+    if (req.method === "OPTIONS") return res.sendStatus(200);
+    protect(req, res, next);
+  },
+  generateInterviewQuestions
+);
+
+app.post(
+  "/api/ai/generate-explanation",
+  (req, res, next) => {
+    if (req.method === "OPTIONS") return res.sendStatus(200);
+    protect(req, res, next);
+  },
+  generateConceptExplanation
+);
+
+// Static uploads
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
-// Start server
+// Start
 const PORT = process.env.PORT || 8000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
