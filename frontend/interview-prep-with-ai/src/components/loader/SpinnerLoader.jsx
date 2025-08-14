@@ -25,6 +25,7 @@
 // };
 
 // export default SpinnerLoader;
+import React from "react";
 
 export const SpinnerLoader = () => {
   return (
