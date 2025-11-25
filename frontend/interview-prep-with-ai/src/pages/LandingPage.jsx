@@ -27,7 +27,7 @@ const LandingPage = () => {
   return (
     <>
       <div className="w-full min-h-full bg-[#FFFCEF]">
-        <div className="w-[500px] h-[500px] bg-amber-200/20 blur-[65px] absolute top-0 left-0" />
+        <div className="w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-amber-200/20 blur-[65px] absolute top-0 left-0" />
 
         <div className="container mx-auto px-4 pt-6 pb-[200px] relative z-10">
           {/* Header */}
@@ -128,7 +128,7 @@ const LandingPage = () => {
         </div>
 
         <div className="text-sm bg-gray-50 text-secondary text-center p-5 mt-5">
-          Made with ❤... Happy Coding
+          &copy; 2025 Interview Prep AI. All rights reserved.
         </div>
       </div>
       <Modal
