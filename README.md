@@ -1,4 +1,4 @@
-# InterviewBuddy AI
+# Interview Prep AI
 
 An AI-powered interview preparation app built with React and Vite. Create personalized interview sessions, generate questions and answers with Gemini, pin important questions, add notes, and view concept explanations.
 
