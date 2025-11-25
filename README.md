@@ -2,7 +2,7 @@
 
 An AI-powered interview preparation app built with React and Vite. Create personalized interview sessions, generate questions and answers with Gemini, pin important questions, add notes, and view concept explanations.
 
-![App Preview](src/assets/image.png)
+![App Preview](/frontend/interview-prep-with-ai/src/assets/demo.png)
  
  [Live Site](https://ai-interview-prep-mauve.vercel.app/)
 
