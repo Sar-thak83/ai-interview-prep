@@ -14,7 +14,7 @@ An AI-powered interview preparation app built with React and Vite. Create person
 ## Tech Stack
 - Frontend: React, Vite, Tailwind CSS, React Router, Axios, React Icons, React Hot Toast, Framer Motion, React Syntax Highlighter
 - Backend: Node.js, Express, MongoDB (Mongoose), JWT, Multer
-- AI: Google Gemini via `@google/genai`
+- AI: Google Gemini (flash-3.0) via `@google/genai`
 
 ## Project Structure
 ```
