@@ -4,7 +4,7 @@ An AI-powered interview preparation app built with React and Vite. Create person
 
 ![App Preview](/frontend/interview-prep-with-ai/src/assets/demo.png)
  
- [Live Site](https://ai-interview-prep-mauve.vercel.app/)
+ [Live Site](https://synapseqa.vercel.app/)
 
 - Personalized sessions: generate tailored Q&A based on role, experience, and focus topics
 - Pin/unpin questions and add notes for quick review

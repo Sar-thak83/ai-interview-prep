@@ -16,7 +16,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: "https://ai-interview-prep-mauve.vercel.app",
+    origin: "https://synapseqa.vercel.app",
     methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization"],
   })
